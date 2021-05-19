@@ -138,3 +138,41 @@ it('handles password toggle', () => {
     
     expect(screen.getByPlaceholderText('Password').type).toEqual("text")
 })
+
+it('redirects user to Member Portfolio page on successful login', () => {
+    render(<Login />)
+    //Triggers handleSubmit function.
+    act(() => {
+        fireEvent.click(screen.getByRole('button', { name: "Login" }), {
+            target: { value: 'true' },
+        })
+    });
+    //For test we assume successful login
+
+    //expect some text from Login component to notBeInDocument()
+
+    //Do we render the Home component?
+    //expect main navbar on Home to show logged in username
+})
+
+
+
+    // server.use(
+    //     rest.get(`${BASE_API}/members/portfolio`, (req, res, ctx) => {
+    ///GET req was successful
+    //         return res(ctx.status(200), ctx.json({
+                 //redirect to the Member Portfolio page
+           //Use <Redirect to="members/portfolio" />?
+    //         }))
+    //     })
+    // )
+    //expect Login component to unmount
+    //render.unmount();
+
+//     As a developer,
+// I need test if redirection post successful login works
+// so that I can make sure user who has successfully logged-in 
+// gets redirected to the homepage with the main navbar showing username of login user.
+
+//test if user gets redirected to homepage with main navbar showing their username 
+//after successful login
